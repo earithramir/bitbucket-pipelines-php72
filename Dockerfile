@@ -30,6 +30,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     autoconf \
     g++ \
     make \
+    tar \
+    openssh-clientscp \
+    rsync \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     && apt-get --purge autoremove -y
 
@@ -57,12 +60,18 @@ RUN add-apt-repository -y ppa:ondrej/php && \
 RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
-
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 # Environmental Variables
 ENV COMPOSER_HOME /root/composer
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install NPM, GULP
+RUN apt-get install -y nodejs &&\
+    apt-get install -y build-essential &&\
+    npm install --global gulp-cli  &&\
+    npm install --global yarn
 
 # Goto temporary directory.
 WORKDIR /tmp
