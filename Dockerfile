@@ -31,7 +31,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     g++ \
     make \
     tar \
-    openssh-clientscp \
+    openssh-client \
+    scp \
     rsync \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     && apt-get --purge autoremove -y
