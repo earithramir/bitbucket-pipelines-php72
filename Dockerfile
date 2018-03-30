@@ -60,10 +60,10 @@ RUN add-apt-repository -y ppa:ondrej/php && \
 RUN apt-get install -y telnet redis-server
 
 # NodeJs
-RUN sudo apt-get install -y curl apt-transport-https ca-certificates &&\
-  curl --fail -ssL -o setup-nodejs https://deb.nodesource.com/setup_8.x &&\
-  sudo bash setup-nodejs &&\
-  sudo apt-get install -y nodejs build-essential
+RUN apt-get install -y curl apt-transport-https ca-certificates &&\
+    curl --fail -ssL -o setup-nodejs https://deb.nodesource.com/setup_8.x &&\
+    bash setup-nodejs &&\
+    apt-get install -y nodejs build-essential
 
 # Time Zone
 RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
