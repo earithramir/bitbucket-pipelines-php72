@@ -57,10 +57,13 @@ RUN add-apt-repository -y ppa:ondrej/php && \
     apt-get remove --purge php5 php5-common
 
 # Redis Server
-RUN apt-get install telnet redis-server
+RUN apt-get install -y telnet redis-server
 
 # Time Zone
 RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
+
+# Curl didnt install
+RUN apt-get install -y curl
 
 VOLUME /root/composer
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -68,7 +71,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ENV COMPOSER_HOME /root/composer
 
 # Install Composer
-RUN apt-get install curl && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install NPM, GULP
 RUN apt-get install -y nodejs &&\
