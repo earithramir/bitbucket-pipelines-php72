@@ -56,6 +56,9 @@ RUN add-apt-repository -y ppa:ondrej/php && \
     apt-get install -y -qq php-pear php7.2-dev php7.2-zip php7.2-xml php7.2-mbstring php7.2-curl php7.2-json php7.2-mysql php7.2-tokenizer php7.2-cli php7.2-imap && \
     apt-get remove --purge php5 php5-common
 
+# Redis Server
+RUN apt-get install telnet redis-server
+
 # Time Zone
 RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
 
