@@ -84,7 +84,9 @@ RUN apt-get install -y nodejs &&\
     npm install gulp --global &&\
     npm install gulp &&\
     npm install --global yarn &&\
-    apt-get install -y libpng-dev
+    apt-get install -y libpng-dev &&\
+    npm install cross_env &&\
+    npm install cross_env --global
 
 # Goto temporary directory.
 WORKDIR /tmp
