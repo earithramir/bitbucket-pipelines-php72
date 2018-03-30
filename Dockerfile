@@ -68,7 +68,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ENV COMPOSER_HOME /root/composer
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN apt-get install curl && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install NPM, GULP
 RUN apt-get install -y nodejs &&\
