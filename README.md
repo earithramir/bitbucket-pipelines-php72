@@ -9,11 +9,17 @@
 - `php7.2-zip`, `php7.2-xml`, `php7.2-mbstring`, `php7.2-curl`, `php7.2-json`, `php7.2-imap`, `php7.2-mysql` and `php7.2-tokenizer`
 - [Composer](https://getcomposer.org/)
 - Mysql 5.7
+- tar
+- openssh-clientscp
+- rsync
+- NodeJs (NPM)
+- yarn
+- gulp
 
 ### Sample `bitbucket-pipelines.yml`
 
 ```YAML
-image: oktupol/bitbucket-pipelines-php71
+image: madwebsolutions/bitbucket-pipelines-php72
 pipelines:
   default:
     - step:
