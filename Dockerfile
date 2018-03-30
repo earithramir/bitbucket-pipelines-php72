@@ -81,7 +81,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN apt-get install -y nodejs &&\
     apt-get install -y build-essential &&\
     npm install --global gulp-cli  &&\
-    npm install --global yarn
+    npm install --global yarn &&\
+    apt-get install libpng-dev
 
 # Goto temporary directory.
 WORKDIR /tmp
