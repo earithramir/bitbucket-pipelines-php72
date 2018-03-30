@@ -66,7 +66,7 @@ RUN apt-get install -y curl apt-transport-https ca-certificates &&\
     apt-get install -y nodejs build-essential
 
 # Time Zone
-RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
+RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.2/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
 
