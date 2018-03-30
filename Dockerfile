@@ -32,7 +32,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     make \
     tar \
     openssh-client \
-    scp \
     rsync \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     && apt-get --purge autoremove -y
