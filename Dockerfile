@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Mark J.F. Teunissen <mark@klen.nl>
+MAINTAINER Mad WebSolutions <info@mad-websolutions.nl>
 
 # Set correct environment variables
 ENV HOME /root
